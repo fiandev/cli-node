@@ -1,11 +1,18 @@
 ### cli node
-comamnd line base javascript (nodejs)
+
+> Command line based javascript (nodejs)
 
 ### clone this project
 
 ```shell
 git clone https://github.com/fiandev/cli-node
 cd cli-node
+```
+
+### install dependencies
+
+```shell
+npm install
 ```
 
 ### edit package.json
@@ -40,3 +47,5 @@ gw exe ls
 # or multiple command
 gw exe "git clone https://github.com/fiandev/cli-node"
 ```
+
+> Build with ❤️ By Fiandev
