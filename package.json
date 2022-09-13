@@ -1,6 +1,6 @@
 {
   "name": "cli-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utilities Tool use nodejs",
   "main": "index.js",
   "bin": {
@@ -36,6 +36,7 @@
     "http": "^0.0.1-security",
     "path": "^0.12.7",
     "progress": "^2.0.3",
-    "unzipper": "^0.10.11"
+    "unzipper": "^0.10.11",
+    "zip-local": "^0.3.5"
   }
 }

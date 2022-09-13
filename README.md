@@ -11,12 +11,10 @@ cd cli-node
 ### edit package.json
 
 ```json
-...
 "bin": {
     "gw": "bin/index.js",
     "<YOUR PREFIX COMMAND>": "bin/index.js"
-  },
-...
+  }
 ```
 
 ### save changes (required)

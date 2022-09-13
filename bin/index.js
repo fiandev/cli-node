@@ -4,12 +4,29 @@ const process = require("process")
 const argv = process.argv
 
 const { Execute } = require("../utilities/index.js")
-const { Rename, Move, UnZipper, Download, Propertie } = require("../lib/files.js")
 const { JMG } = require ("../lib/json-utils.js")
-const { Guide, ShowMenu } = require("../lib/menu.js")
+
+const { 
+  Guide, 
+  ShowMenu
+} = require("../lib/menu.js")
+
+const { 
+  Rename, 
+  Move, 
+  Unzipper, 
+  Zipper, 
+  Download, 
+  Properties
+} = require("../lib/files.js")
+
 
 if (argv.length < 3) ShowMenu()
 
+/*
+ * @params (number)
+ * @returns (string/number) Index of arguments CLI 
+**/
 const args = (n) => argv[n]
 
 const prefix = args(1)
@@ -17,6 +34,7 @@ const command = args(2)
 const args1 = args(3)
 const args2 = args(4)
 
+/* command switching */
 switch (command) {
   case 'menu':
      ShowMenu()
@@ -38,7 +56,12 @@ switch (command) {
   case 'unzip':
   case 'unArchive':
   case 'unrar':
-      UnZipper(args1, args2)
+      Unzipper(args1, args2)
+    break;
+  case "zip":
+  case "zipper":
+  case "compress":
+    Zipper(args1, args2)
     break;
   case 'properties':
   case 'property':
