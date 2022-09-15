@@ -13,6 +13,9 @@ cd cli-node
 
 ```shell
 npm install
+
+# or you can installing as global dependencies
+npm install -g
 ```
 
 ### edit package.json
@@ -24,7 +27,7 @@ npm install
   }
 ```
 
-### save changes (required)
+### start command line
 
 ```shell
 npm link
@@ -33,7 +36,9 @@ npm link
 ### show menu command
 
 ```shell
+# showing menu
 gw menu
+
 # or just write <PREFIX>
 gw
 ```

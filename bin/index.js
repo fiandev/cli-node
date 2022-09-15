@@ -13,7 +13,9 @@ const {
 
 const { 
   Rename, 
-  Move, 
+  Move,
+  Copy,
+  Delete,
   Unzipper, 
   Zipper, 
   Download, 
@@ -43,6 +45,15 @@ switch (command) {
   case 'pindahin':
      Move(args1, args2)
     break;
+  case 'salin':
+  case 'cp':
+  case 'copy':
+     Copy(args1, args2)
+  case 'hapus':
+  case 'delete':
+  case 'apus':
+     Delete(args1)
+    break;
   case 'rename':
   case 'ganti':
      Rename(args1, args2)
@@ -51,11 +62,8 @@ switch (command) {
   case 'dl':
      Download(args1, args2)
     break;
-  case 'extract':
-  case 'ekstrak':
+  case 'unzipper':
   case 'unzip':
-  case 'unArchive':
-  case 'unrar':
       Unzipper(args1, args2)
     break;
   case "zip":

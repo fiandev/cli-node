@@ -28,6 +28,9 @@
     "url": "https://github.com/fiandev/cli-node/issues"
   },
   "homepage": "https://github.com/fiandev/cli-node/#readme",
+  "publishConfig": {
+   "@fiandev:registry": "https://npm.pkg.github.com"
+   },
   "dependencies": {
     "axios": "^0.27.2",
     "child_process": "^1.0.2",
