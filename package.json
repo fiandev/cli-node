@@ -1,10 +1,10 @@
 {
   "name": "cli-node",
   "version": "0.0.2",
-  "description": "Utilities Tool use nodejs",
+  "description": "Command line Based Nodejs",
   "main": "index.js",
   "bin": {
-    "fian": "bin/index.js",
+    "cline": "bin/index.js",
     "aku": "bin/index.js",
     "gw": "bin/index.js"
   },
@@ -19,8 +19,9 @@
     "url": "git+https://github.com/fiandev/cli-node.git"
   },
   "keywords": [
-    "json",
-    "merger"
+    "module",
+    "command line",
+    "javascript"
   ],
   "author": "fiandev",
   "license": "ISC",

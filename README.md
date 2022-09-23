@@ -12,17 +12,17 @@ cd cli-node
 ### install dependencies
 
 ```shell
-npm install
+npm install cli-node
 
-# or you can installing as global dependencies
-npm install -g
+# or you can installing as global
+npm install cli-node -g
 ```
 
 ### edit package.json
 
 ```json
 "bin": {
-    "gw": "bin/index.js",
+    "cline": "bin/index.js",
     "<YOUR PREFIX COMMAND>": "bin/index.js"
   }
 ```
@@ -37,20 +37,20 @@ npm link
 
 ```shell
 # showing menu
-gw menu
+cline menu
 
 # or just write <PREFIX>
-gw
+cline
 ```
 
 ### example execute command
 
 ```shell
 # show list files in directory active
-gw exe ls
+cline exe ls
 
-# or multiple command
-gw exe "git clone https://github.com/fiandev/cli-node"
+# or multiple command arguments
+cline exe "git clone https://github.com/fiandev/cli-node"
 ```
 
 > Build with ❤️ By Fiandev
