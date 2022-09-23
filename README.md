@@ -12,10 +12,10 @@ cd cli-node
 ### install dependencies
 
 ```shell
-npm install cli-node
+npm install cline-js
 
 # or you can installing as global
-npm install cli-node -g
+npm install cline-js -g
 ```
 
 ### edit package.json

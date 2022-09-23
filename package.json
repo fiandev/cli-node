@@ -1,18 +1,17 @@
 {
-  "name": "cli-node",
+  "name": "cline-js",
   "version": "0.0.2",
   "description": "Command line Based Nodejs",
   "main": "index.js",
   "bin": {
     "cline": "bin/index.js",
-    "aku": "bin/index.js",
     "gw": "bin/index.js"
   },
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "start": "node bin/fian"
+    "start": "node bin/cline"
   },
   "repository": {
     "type": "git",
