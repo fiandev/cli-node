@@ -2,6 +2,7 @@
 
 const process = require("process")
 const argv = process.argv
+const Exit = () => process.exit()
 
 const { Execute } = require("../utilities/index.js")
 const { JMG } = require ("../lib/json-utils.js")
@@ -16,75 +17,95 @@ const {
   Move,
   Copy,
   Delete,
-  Unzipper, 
+  UnZipper, 
   Zipper, 
   Download, 
   Properties
 } = require("../lib/files.js")
 
+/* package.json */
+const app = require("../package.json")
+/* commander */
+const { Command } = require("commander")
+const program = new Command()
 
-if (argv.length < 3) ShowMenu()
+/* program information */
+program
+  .name(app.name)
+  .usage("<command> [options]")
+  .version(app.version, "-v, --version", "show app version")
+  .showSuggestionAfterError()
+  .helpOption("-h, --help", "show help menu")
 
-/*
- * @params (number)
- * @returns (string/number) Index of arguments CLI 
-**/
-const args = (n) => argv[n]
+program
+  .command("menu")
+  .description("show list menu")
+  .action(() => {
+    ShowMenu()
+  })
 
-const prefix = args(1)
-const command = args(2)
-const args1 = args(3)
-const args2 = args(4)
+program
+  .command("exe [any...]")
+  .description("run any command line")
+  .action((any) => {
+    Execute(any)
+  })
 
-/* command switching */
-switch (command) {
-  case 'menu':
-     ShowMenu()
-    break;
-  case 'move':
-  case 'pindahin':
-     Move(args1, args2)
-    break;
-  case 'salin':
-  case 'cp':
-  case 'copy':
-     Copy(args1, args2)
-  case 'hapus':
-  case 'delete':
-  case 'apus':
-     Delete(args1)
-    break;
-  case 'rename':
-  case 'ganti':
-     Rename(args1, args2)
-    break;
-  case 'download':
-  case 'dl':
-     Download(args1, args2)
-    break;
-  case 'unzipper':
-  case 'unzip':
-      Unzipper(args1, args2)
-    break;
-  case "zip":
-  case "zipper":
-  case "compress":
-    Zipper(args1, args2)
-    break;
-  case 'properties':
-  case 'property':
-  case 'props':
-      Properties(args1)
-    break;
-  case 'jmg':
-  case 'gabungin':
-      JMG(args1, args2)
-    break;
-  case 'exe':
-  case 'execute':
-      Execute(prefix, args1)
-    break;
-  default:
-     console.log("command not found!")
-    break;
-}
+program
+  .command("mv [path] [dest]")
+  .description("move file/folder to path destination")
+  .action((path, dest) => {
+    Move(path, dest)
+  })
+
+program
+  .command("cp [path] [dest]")
+  .description("copy file/folder to path destination")
+  .action((path, dest) => {
+    Copy(path, dest)
+  })
+  
+program
+  .command("rename [path] [dest]")
+  .description("rename file/folder to path destination")
+  .action((path, dest) => {
+    Rename(path, dest)
+  })
+  
+program
+  .command("del [path]")
+  .description("delete file/folder")
+  .action((path) => {
+    Delete(path)
+  })
+  
+program
+  .command("dl [url] [dest]")
+  .description("download file from url")
+  .action((url, dest) => {
+    Download(url, dest)
+  })
+  
+program
+  .command("zip [from] [dest]")
+  .description("zipping file/folder")
+  .action((from, dest) => {
+    Zipper(from, dest)
+  })
+  
+program
+  .command("unzip [from] [dest]")
+  .description("unzipping file compressed")
+  .action((from, dest) => {
+    UnZipper(from, dest)
+  })
+  
+
+  
+  
+  
+  
+  
+  
+/* parsing command to run */
+program.parse()

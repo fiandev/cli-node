@@ -18,16 +18,17 @@ const ChangeCommand = async (before, after) => {
   console.log(`success change prefix ${ before } to ${ after }`)
 }
 
-const Execute = (prefix, command) => {
-  exec(command, (err, stdout, stderr) => {
+const Execute = (command) => {
+  exec(...command, (err, stdout, stderr) => {
     if (err) console.log(err)
     if (stderr !== "") console.log(stderr)
     
     /* resulr command */
-    console.log(`${ prefix } => ${ command } \n`)
+    console.log(`===> ${ command } \n`)
     console.log(stdout)
   })
 }
+
 module.exports = {
   ChangeCommand,
   Execute
